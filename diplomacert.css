@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "Gilroy_Thin";
+  src: url(../assets/fonts/Gilroy-Thin.ttf);
+}
+@font-face {
+  font-family: "Gilroy_Italic";
+  src: url(../assets/fonts/Gilroy-LightItalic.ttf);
+}
+@font-face {
+  font-family: "Gilroy_Regular";
+  src: url(../assets/fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+  font-family: "Gilroy_Medium";
+  src: url(../assets/fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+  font-family: "Gilroy_Semibold";
+  src: url(../assets/fonts/Gilroy-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Gilroy_Bold";
+  src: url(../assets/fonts/Gilroy-Bold.ttf);
+}
+@font-face {
+  font-family: "Gilroy_Black";
+  src: url(../assets/fonts/Gilroy-Black.ttf);
+}
+@font-face {
+  font-family: "Linux";
+  src: url(./assets/linux_libertine/LinLibertine_R.ttf);
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  /* //font family */
+  --font-gilroy-thin: "Gilroy_Thin", sans-serif;
+  --font-gilroy-italic: "Gilroy_Italic", sans-serif;
+
+  --font-gilroy-regular: "Gilroy_Regular", sans-serif;
+  --font-gilroy-medium: "Gilroy_Medium", sans-serif;
+  --font-gilroy-semibold: "Gilroy_Semibold", sans-serif;
+  --font-gilroy-bold: "Gilroy_Bold", sans-serif;
+  --font-gilroy-black: "Gilroy_Black", sans-serif;
+
+  --font-linux-regular: "Linux", sans-serif;
+  /* //font size */
+  --heading-1: 28px;
+  --heading-2: 22px;
+  --big-text: 18px;
+  --normal-text: 16px;
+  --small-text: 14px;
+  /* //colors */
+  --pc-blue: #222057;
+  --pc-black: #232323;
+  --pc-orange: #f8991d;
+  --pc-light-gray: #939393;
+  --pc-dark-gray: #323232;
+  --pc-white-white: #ffffff;
+  --pc-bg: #f5f6fa;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cert_container {
+  width: 60vw;
+  height: 60vh;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cert_container .main_cert {
+  border: 30px solid transparent;
+  padding: 45px 30px;
+  border-image: url("./Cert Outline.png") 100 round;
+}
+
+.main_cert img {
+  width: 25%;
+  display: block;
+  margin-bottom: 4.5rem;
+}
+
+.main_cert .school {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Prosto One", cursive;
+  width: 100%;
+  color: var(--pc-blue);
+}
+
+.main_cert small:nth-of-type(1) {
+  font-family: var(--font-linux-regular);
+  font-size: 17px;
+  color: var(--pc-black);
+}
+
+.main_cert .academy {
+  font-family: "Libre Baskerville", serif;
+  font-size: 40px;
+  color: var(--pc-blue);
+}
+
+.main_cert .student_name {
+  font-family: "Libre Baskerville", serif;
+  font-size: 40px;
+  color: var(--pc-blue);
+}
+
+.main_cert p {
+  font-family: var(--font-linux-regular);
+  width: 60%;
+  margin: auto;
+  font-size: 17px;
+  line-height: 1.2;
+  color: var(--pc-black);
+}
+
+.bar_code {
+  margin-top: -2rem;
+  margin-bottom: 0rem;
+  height: 125px;
+}
+
+.bar_code .bar_code_text {
+  font-family: "Libre Barcode 39";
+  font-size: 35px;
+  color: var(--pc-black);
+}
+
+.stamp_sign_section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center center;
+  position: relative;
+}
+
+.stamp_sign_section .sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stamps_codes {
+  display: grid;
+  grid-template-columns: 100%;
+  place-items: center center;
+}
+
+.line {
+  height: 80%;
+  width: 3px;
+  background-color: var(--pc-black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.certificate_id {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.2rem;
+  font-family: var(--font-gilroy-regular);
+  font-weight: bold;
+}
+
+.certificate_id span:nth-of-type(2) {
+  font-family: var(--font-gilroy-medium);
+  font-weight: bold;
+}
+
+.sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 5rem;
+}
+
+.sign_HOF,
+.sign_Founder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  gap: 3rem;
+}
+
+.sign_HOF img,
+.sign_Founder img {
+  height: 100%;
+  width: 100%;
+}
+
+.qr {
+  /* margin-left: 15rem; */
+  width: 150px;
+  height: 150px;
+}
+
+.qr img {
+  width: 100%;
+}
+
+.download_btn {
+  background-color: var(--pc-orange);
+  margin-top: 3rem;
+  padding: 10px 18px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-family: var(--font-gilroy-medium);
+  font-size: var(--small-text);
+  cursor: pointer;
+}
+.download_btn:hover {
+  opacity: 0.9;
+}
+#error_message {
+  font-size: 20px;
+  color: #ff0000;
+  text-transform: capitalize;
+  font-family: var(--font-gilroy-medium);
+  text-align: center;
+  padding-top: 3rem;
+}
