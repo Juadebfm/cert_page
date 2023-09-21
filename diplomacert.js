@@ -10,10 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the content container element
   const certificateContent = document.querySelector(".cert_container");
 
-
   if (certificateId) {
     // Certificate ID is found in the URL
-
 
     // Hide the error message
     errorMessageElement.style.display = "none";
@@ -119,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Display the error message
     errorMessageElement.textContent = "Certificate ID not found";
     errorMessageElement.style.display = "block";
-  
 
     certificateContent.innerHTML = "";
 
@@ -127,3 +124,5 @@ document.addEventListener("DOMContentLoaded", function () {
     certificateContent.appendChild(errorMessageElement);
   }
 });
+
+
