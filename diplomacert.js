@@ -7,8 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the error message element
   const errorMessageElement = document.getElementById("error_message");
 
-  // Get the content container element
-  const certificateContent = document.querySelector(".cert_container");
+  // Get the content containers for different course levels
+  const entryLevelContainer = document.querySelector(".cert_container");
+  const diplomaLevelContainer = document.querySelector(".dip_container");
+  const mainBody = document.getElementById("mainBody");
+  const download_btn = document.querySelector(".download_btn");
 
   if (certificateId) {
     // Certificate ID is found in the URL
@@ -26,90 +29,83 @@ document.addEventListener("DOMContentLoaded", function () {
         // Print the resulting data to the console
         console.log("API Response:", result);
 
-        // Set the formatted date in the <span> element
-        const currentDate = new Date();
-        const formattedDate = `${currentDate.toLocaleString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        })}`;
-        const dayElement = document.getElementById("day");
-        dayElement.textContent = formattedDate;
+        // Check if the "course_level" is "Diploma" (case-insensitive)
+        const courseLevel = result.course_level;
+        if (courseLevel === "Diploma") {
+          // Render neccesary details
+          // Get the course name from the API response
+          const courseName = result.course_name.toLowerCase(); // Convert to lowercase for case-insensitive comparison
 
-        const studentNameElement = document.getElementById("student_name");
-        studentNameElement.textContent = result.full_name;
+          // Define the mapping of keywords to school names
+          const keywordToSchoolMap = {
+            "product design": "Product School Diploma",
+            "product management": "Product School Diploma",
+            "agile project mgt": "Product School Diploma",
+            "data analytics": "Data School Diploma",
+            "business analytics": "Data School Diploma",
+            "backend development": "Programming School Diploma",
+            "frontend development": "Programming School Diploma",
+            "cloud computing": "Cloud School Diploma",
+            "cyber security": "Cloud School Diploma",
+          };
 
-        const course_name = document.getElementById("course_name");
-        course_name.textContent = result.course_name;
+          // Initialize the default school name
+          let schoolName = "---";
 
-        const cert_id = document.getElementById("cert_id");
-        cert_id.textContent = result.certificate_id;
-
-        // Get the course name from the API response
-        const courseName = result.course_name.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-
-        // Define the mapping of keywords to school names
-        const keywordToSchoolMap = {
-          "product design": "Product School Diploma",
-          "product management": "Product School Diploma",
-          "agile project mgt": "Product School Diploma",
-          "data analytics": "Data School Diploma",
-          "business analytics": "Data School Diploma",
-          "backend development": "Programming School Diploma",
-          "frontend development": "Programming School Diploma",
-          "cloud computing": "Cloud School Diploma",
-          "cyber security": "Cloud School Diploma",
-        };
-
-        // Initialize the default school name
-        let schoolName = "---";
-
-        // Iterate over the keywords and check if any keyword is present in the course name
-        for (const keyword in keywordToSchoolMap) {
-          if (courseName.includes(keyword)) {
-            schoolName = keywordToSchoolMap[keyword];
-            break; // Exit the loop once a match is found
+          // Iterate over the keywords and check if any keyword is present in the course name
+          for (const keyword in keywordToSchoolMap) {
+            if (courseName.includes(keyword)) {
+              schoolName = keywordToSchoolMap[keyword];
+              break; // Exit the loop once a match is found
+            }
           }
-        }
 
-        const school_b = document.getElementById("school_b");
-        school_b.textContent = schoolName;
+          const dip_school_b = document.getElementById("dip_school_b");
+          dip_school_b.textContent = schoolName;
 
-        // Get the span element
-        const schoolSpan = document.querySelector(".school");
+          const dip_school = document.querySelector(".dip_school")
+          dip_school.textContent=schoolName
 
-        // Set the text content of the span based on the matched school name
-        schoolSpan.textContent = schoolName;
+  
+          // Update content in the diploma container
+          const dipFullName = document.getElementById("dip_student_name");
+          const dipCourseName = document.getElementById("dip_course_name");
+          const dipDay = document.getElementById("dip_day");
+          const dipCertId = document.getElementById("dip_cert_id");
 
-        // Check if course_level is "Diploma" (case-insensitive)
-        const courseLevel = result.course_level.toLowerCase();
-        if (courseLevel !== "diploma") {
-          // Certificate ID is not found in the URL
+          dipFullName.textContent = result.full_name;
+          dipCourseName.textContent = result.course_name;
+          dipDay.textContent = result.date_issued;
+          dipCertId.textContent = result.certificate_id;
+          // Show the diploma level container and hide the entry level container
+          entryLevelContainer.style.display = "none";
+          diplomaLevelContainer.style.display = "block";
+          download_btn.style.display = "block";
+        } else if (courseLevel === "Entrylevel") {
+          // Show the entry level container and hide the diploma level container
+          entryLevelContainer.style.display = "block";
+          diplomaLevelContainer.style.display = "none";
+          download_btn.style.display = "block";
+        } else {
+          // Invalid course level
+          mainBody.innerHTML = "";
 
           // Display the error message
-          errorMessageElement.textContent = "Certificate ID not found";
+          errorMessageElement.textContent = "Error getting certificate";
           errorMessageElement.style.display = "block";
-
-          certificateContent.innerHTML = "";
-
-          // Append the error message element to certificateContent
-          certificateContent.appendChild(errorMessageElement);
+          mainBody.appendChild(errorMessageElement);
         }
-        // You can further process the API response as needed
       })
       .catch((error) => {
         console.error("API Error:", error);
 
         // Certificate ID is not found in the URL
+        mainBody.innerHTML = "";
 
         // Display the error message
         errorMessageElement.textContent = "Certificate ID not found";
         errorMessageElement.style.display = "block";
-
-        certificateContent.innerHTML = "";
-
-        // Append the error message element to certificateContent
-        certificateContent.appendChild(errorMessageElement);
+        mainBody.appendChild(errorMessageElement);
       });
   } else {
     // Certificate ID is not found in the URL
@@ -117,12 +113,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Display the error message
     errorMessageElement.textContent = "Certificate ID not found";
     errorMessageElement.style.display = "block";
-
-    certificateContent.innerHTML = "";
-
-    // Append the error message element to certificateContent
-    certificateContent.appendChild(errorMessageElement);
   }
 });
-
-

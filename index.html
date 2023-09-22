@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css?family=Libre Barcode 39"
       rel="stylesheet"
     />
-    <title>Diploma Certificate</title>
+    <title>Certificate Verification</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -20,56 +20,114 @@
     <link rel="stylesheet" href="./diplomacert.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   </head>
-  <body class="cert_container" id="GFG">
-    <div id="error_message"></div>
-    <div class="main_cert">
-      <img src="./PluralCode 2 1.png" alt="Pluralcode Logo" />
-      <span class="school">---</span>
-      <br /><br />
-      <small>The Founder & Board of</small>
-      <br /><br />
-      <span class="academy">PluralCode Academy,</span>
-      <br /><br />
-      <p>
-        acting on recommendation of the Faculty Head for
-        <span id="school_b">School of Data</span> have conferred upon
-      </p>
-      <br /><br />
-      <span class="student_name" id="student_name">---</span>
-      <br /><br />
-      <p>
-        a professional <b id="course_name">---</b>. The aforementioned person is
-        determined to have demonstrated mastery of the subject and met all
-        standards for certification. <br />
-        Hereunder is placed our names as well as the seal of PluralCode Academy
-        as testament on this day <span id="day">March 11, 2023</span>
-      </p>
-      <br /><br /><br />
-      <div class="stamp_sign_section">
-        <div class="line"></div>
-        <div class="sign">
-          <div class="sign_Founder">
-            <img src="./sign1.png" alt="" />
+  <body id="mainBody">
+    <!-- DIPLOMA LEVEL CERTIFICATION SECTION -->
+    <div class="dip_container" style="display: none">
+      <div class="dip_main_cert">
+        <img src="./PluralCode 2 1.png" alt="Pluralcode Logo" />
+        <span class="dip_school">---</span>
+        <br /><br />
+        <small>The Founder & Board of</small>
+        <br /><br />
+        <span class="dip_academy">PluralCode Academy,</span>
+        <br /><br />
+        <p>
+          acting on recommendation of the Faculty Head for
+          <span id="dip_school_b"></span> have conferred upon
+        </p>
+        <br /><br />
+        <span class="dip_student_name" id="dip_student_name">---</span>
+        <br /><br />
+        <p>
+          a professional <b id="dip_course_name">---</b>. The aforementioned
+          person is determined to have demonstrated mastery of the subject and
+          met all standards for certification. <br />
+          Hereunder is placed our names as well as the seal of PluralCode
+          Academy as testament on this day <span id="dip_day">March 11, 2023</span>
+        </p>
+        <br /><br /><br />
+        <div class="dip_stamp_sign_section">
+          <div class="dip_line"></div>
+          <div class="dip_sign">
+            <div class="dip_sign_Founder">
+              <img src="./sign1.png" alt="" />
+            </div>
+            <div class="dip_sign_HOF">
+              <img src="bn.png" alt="" />
+            </div>
           </div>
-          <div class="sign_HOF">
-            <img src="bn.png" alt="" />
-          </div>
-        </div>
-        <div class="stamps_codes">
-          <img src="stamp.png" alt="" />
-          <div class="bar_code">
-            <div class="qr"><img src="./qr_code.svg" alt="" /></div>
-          </div>
-          <div class="certificate_id">
-            <span>Certificate ID:</span>
-            <span id="cert_id">J20230423455</span>
+          <div class="dip_stamps_codes">
+            <img src="stamp.png" alt="" />
+            <div class="dip_bar_code">
+              <div class="dip_qr"><img src="./qr_code.svg" alt="" /></div>
+            </div>
+            <div class="dip_certificate_id">
+              <span>Certificate ID:</span>
+              <span id="dip_cert_id">J20230423455</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- DIPLOMA LEVEL CERTIFICATION SECTION -->
 
-    <button class="download_btn" id="download_btn">Download PDF</button>
+    <!-- ENTRY LEVEL CERTIFICATION SECTION -->
+    <div class="cert_container" style="display: none">
+      <div class="cert_main_cert">
+        <img src="./new Temp (1).png" />
 
-    <script src="./diplomacert.js" type="text/javascript"></script>
+        <div class="cert_details_box">
+          <img src="./PluralCode 2 1.png" alt="" class="logo" />
+          <h2>Certificate</h2>
+          <h3>OF COMPLETION</h3>
+          <p>This certificate is proudly presented to</p>
+          <h2 id="cert_student_name">---</h2>
+          <p>
+            For successfully completing the
+            <span>Data Analytics Program</span>
+          </p>
+          <p>
+            <span>Excel |</span><span>PowerBI |</span><span>PostgresSQL |</span
+            ><span>Microsoft SQL Server |</span
+            ><span>Problem Solving Techniques</span>
+          </p>
+          <div class="cert_dates_stamps">
+            <div class="cert_dates">
+              <div>
+                <p>From</p>
+                <span><b>4th</b> of <b>March</b>, 2023</span>
+                <span>to <b>7th</b> of <b>may</b>, 2023</span>
+              </div>
+              <span><b>Dates</b></span>
+            </div>
+            <div class="cert_stamp">
+              <img src="./Group 20705.png" alt="" />
+            </div>
+            <div class="cert_sign">
+              <img src="./sign1.png" alt="" />
+              <span>Head Of Academy</span>
+            </div>
+          </div>
+          <span class="cert_notes"
+            >Note: To verify this certificate, visit
+            <a
+              href="https://pluralcode.institute/verify-certificate"
+              target="_blank"
+              >www.pluralcode.institute/verify-certificate</a
+            >
+            and enter certificate ID</span
+          >
+        </div>
+      </div>
+    </div>
+    <!-- ENTRY LEVEL CERTIFICATION SECTION -->
+
+    <div id="error_message"></div>
+
+    <button class="download_btn" style="display: none">
+      Download PDF
+    </button>
+
+    <script src="./diplomacert.js"></script>
   </body>
 </html>

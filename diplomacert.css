@@ -72,7 +72,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.cert_container {
+body {
+  position: relative;
+  padding-top: 3rem;
+}
+
+.dip_container {
   width: 60vw;
   height: 60vh;
   padding: 20px;
@@ -83,19 +88,19 @@
   background-position: center;
 }
 
-.cert_container .main_cert {
+.dip_container .dip_main_cert {
   border: 30px solid transparent;
   padding: 45px 30px;
   border-image: url("./Cert Outline.png") 100 round;
 }
 
-.main_cert img {
+.dip_main_cert img {
   width: 25%;
   display: block;
   margin-bottom: 4.5rem;
 }
 
-.main_cert .school {
+.dip_main_cert .dip_school {
   font-size: 35px;
   text-transform: uppercase;
   font-weight: bold;
@@ -104,25 +109,25 @@
   color: var(--pc-blue);
 }
 
-.main_cert small:nth-of-type(1) {
+.dip_main_cert small:nth-of-type(1) {
   font-family: var(--font-linux-regular);
   font-size: 17px;
   color: var(--pc-black);
 }
 
-.main_cert .academy {
+.dip_main_cert .dip_academy {
   font-family: "Libre Baskerville", serif;
   font-size: 40px;
   color: var(--pc-blue);
 }
 
-.main_cert .student_name {
+.dip_main_cert .dip_student_name {
   font-family: "Libre Baskerville", serif;
   font-size: 40px;
   color: var(--pc-blue);
 }
 
-.main_cert p {
+.dip_main_cert p {
   font-family: var(--font-linux-regular);
   width: 60%;
   margin: auto;
@@ -131,39 +136,33 @@
   color: var(--pc-black);
 }
 
-.bar_code {
+.dip_bar_code {
   margin-top: -2rem;
   margin-bottom: 0rem;
   height: 125px;
 }
 
-.bar_code .bar_code_text {
-  font-family: "Libre Barcode 39";
-  font-size: 35px;
-  color: var(--pc-black);
-}
-
-.stamp_sign_section {
+.dip_stamp_sign_section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center center;
   position: relative;
 }
 
-.stamp_sign_section .sign {
+.dip_stamp_sign_section .dip_sign {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.stamps_codes {
+.dip_stamps_codes {
   display: grid;
   grid-template-columns: 100%;
   place-items: center center;
 }
 
-.line {
+.dip_line {
   height: 80%;
   width: 3px;
   background-color: var(--pc-black);
@@ -173,7 +172,7 @@
   transform: translate(-50%, -50%);
 }
 
-.certificate_id {
+.dip_certificate_id {
   display: flex;
   flex-direction: column;
   margin-top: 2.2rem;
@@ -181,12 +180,12 @@
   font-weight: bold;
 }
 
-.certificate_id span:nth-of-type(2) {
+.dip_certificate_id span:nth-of-type(2) {
   font-family: var(--font-gilroy-medium);
   font-weight: bold;
 }
 
-.sign {
+.dip_sign {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,8 +194,8 @@
   gap: 5rem;
 }
 
-.sign_HOF,
-.sign_Founder {
+.dip_sign_HOF,
+.dip_sign_Founder {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,19 +204,19 @@
   gap: 3rem;
 }
 
-.sign_HOF img,
-.sign_Founder img {
+.dip_sign_HOF img,
+.dip_sign_Founder img {
   height: 100%;
   width: 100%;
 }
 
-.qr {
+.dip_qr {
   /* margin-left: 15rem; */
   width: 150px;
   height: 150px;
 }
 
-.qr img {
+.dip_qr img {
   width: 100%;
 }
 
@@ -231,6 +230,10 @@
   font-family: var(--font-gilroy-medium);
   font-size: var(--small-text);
   cursor: pointer;
+  position: absolute;
+  top: -30px; /* Set the top position to 0 to align with the top of the page */
+  left: 50%;
+  transform: translateX(-50%);
 }
 .download_btn:hover {
   opacity: 0.9;
@@ -245,53 +248,68 @@
 }
 
 @media (max-width: 767px) {
-  .cert_container {
+  .dip_container {
     width: 100%;
     height: 100%;
     padding: 0px;
   }
-  .cert_container .main_cert {
+  .dip_container .dip_main_cert {
     border: 30px solid transparent;
     padding: 10px;
     border-image: url("./Cert Outline.png") 100 round;
   }
-  .main_cert img {
+  .dip_main_cert img {
     width: 45%;
     display: block;
     margin-bottom: 1.5rem;
   }
-  .main_cert .school {
+  .dip_main_cert .dip_school {
     font-size: 32px;
   }
-  .main_cert .academy {
+  .dip_main_cert .dip_academy {
     font-family: "Libre Baskerville", serif;
     font-size: 25px;
     color: var(--pc-blue);
   }
-  .main_cert p {
+  .dip_main_cert p {
     width: 80%;
     font-size: 15px;
   }
-  .stamp_sign_section {
+  .dip_stamp_sign_section {
     width: 100%;
     padding: 0;
   }
-  .qr {
+  .dip_qr {
     width: 100%;
     margin-top: 2rem;
     margin-left: 3rem;
     /* height: 70px; */
   }
-  .certificate_id {
+  .dip_certificate_id {
     margin-top: 0rem;
   }
-  .certificate_id span:nth-of-type(2) {
+  .dip_certificate_id span:nth-of-type(2) {
     font-size: 12px;
+  }
+  .download_btn {
+    background-color: var(--pc-orange);
+    margin-top: 3rem;
+    padding: 10px 18px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-family: var(--font-gilroy-medium);
+    font-size: var(--small-text);
+    cursor: pointer;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 @media (min-width: 767px) and (max-width: 900px) {
-  .cert_container {
+  .dip_container {
     width: 90vw;
     height: 60vh;
   }
