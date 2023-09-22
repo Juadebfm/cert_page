@@ -63,10 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
           const dip_school_b = document.getElementById("dip_school_b");
           dip_school_b.textContent = schoolName;
 
-          const dip_school = document.querySelector(".dip_school")
-          dip_school.textContent=schoolName
+          const dip_school = document.querySelector(".dip_school");
+          dip_school.textContent = schoolName;
 
-  
           // Update content in the diploma container
           const dipFullName = document.getElementById("dip_student_name");
           const dipCourseName = document.getElementById("dip_course_name");
@@ -82,7 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
           diplomaLevelContainer.style.display = "block";
           download_btn.style.display = "block";
         } else if (courseLevel === "Entrylevel") {
-          // Show the entry level container and hide the diploma level container
+          const entry_cert_id = document.getElementById("entry_cert_id");
+          entry_cert_id.textContent = result.certificate_id;
+          const cert_student_name = document.getElementById("cert_student_name")
+          cert_student_name.textContent = result.full_name
+          const cert_course_name = document.getElementById("cert_course_name")
+          cert_course_name.textContent = result.course_name
+
           entryLevelContainer.style.display = "block";
           diplomaLevelContainer.style.display = "none";
           download_btn.style.display = "block";
@@ -115,3 +120,14 @@ document.addEventListener("DOMContentLoaded", function () {
     errorMessageElement.style.display = "block";
   }
 });
+
+// extra help codes
+
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Find the div element
+const certStampDate = document.querySelector(".cert_stamp_date");
+
+// Set the current year as its content
+certStampDate.textContent = currentYear;
