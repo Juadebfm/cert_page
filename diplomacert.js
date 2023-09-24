@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const entryLevelContainer = document.querySelector(".cert_container");
   const diplomaLevelContainer = document.querySelector(".dip_container");
   const mainBody = document.getElementById("mainBody");
-  const download_btn = document.querySelector(".download_btn");
+  const download_btn = document.getElementById("download");
 
   if (certificateId) {
     // Certificate ID is found in the URL
