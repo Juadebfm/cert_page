@@ -94,6 +94,39 @@ document.addEventListener("DOMContentLoaded", function () {
           const cert_course_name = document.getElementById("cert_course_name");
           cert_course_name.textContent = result.course_name;
 
+          // date
+          // Extract the date part from the given date string
+          const dateIssued = new Date(result.date_issued);
+          const day = dateIssued.getDate();
+          const month = new Intl.DateTimeFormat("en-US", {
+            month: "long",
+          }).format(dateIssued);
+          const year = dateIssued.getFullYear();
+
+          // Format the date as "11th of September, 2023"
+          const formattedDate = `${day}${daySuffix(day)} of ${month}, ${year}`;
+
+          // Create and set text for formatted date
+          const dateIssuedText = document.querySelector(".cert_date_issued");
+          dateIssuedText.textContent = `${formattedDate}`;
+
+          // Function to add the appropriate suffix to the day
+          function daySuffix(day) {
+            if (day >= 11 && day <= 13) {
+              return "th";
+            }
+            switch (day % 10) {
+              case 1:
+                return "st";
+              case 2:
+                return "nd";
+              case 3:
+                return "rd";
+              default:
+                return "th";
+            }
+          }
+
           entryLevelContainer.style.display = "block";
           diplomaLevelContainer.style.display = "none";
         } else {

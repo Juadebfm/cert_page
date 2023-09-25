@@ -1,104 +1,105 @@
 body {
-    margin: 0;
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: .8125rem;
-    font-weight: 400;
-    line-height: 1.5385;
-    color: #333;
-    text-align: left;
-    background-color: #eee
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5385;
+  color: #333;
+  text-align: left;
+  background-color: #eee;
 }
 
 .mt-50 {
-    margin-top: 50px
+  margin-top: 50px;
 }
 
 .mb-50 {
-    margin-bottom: 50px
+  margin-bottom: 50px;
 }
 
 .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .1875rem
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.1875rem;
 }
 
 .card-img-actions {
-    position: relative
+  position: relative;
 }
 
 .card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-    text-align: center
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  text-align: center;
 }
 
 .card-title {
-    margin-top: 10px;
-    font-size: 17px
+  margin-top: 10px;
+  font-size: 17px;
 }
 
 .invoice-color {
-    color: red !important
+  color: red !important;
 }
 
 .card-header {
-    padding: .9375rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .02);
-    border-bottom: 1px solid rgba(0, 0, 0, .125)
+  padding: 0.9375rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 a {
-    text-decoration: none !important
+  text-decoration: none !important;
 }
 
 .btn-light {
-    color: #333;
-    background-color: #fafafa;
-    border-color: #ddd
+  color: #333;
+  background-color: #fafafa;
+  border-color: #ddd;
 }
 
 .header-elements-inline {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 @media (min-width: 768px) {
-    .wmin-md-400 {
-        min-width: 400px !important
-    }
+  .wmin-md-400 {
+    min-width: 400px !important;
+  }
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #2196f3
+  color: #fff;
+  background-color: #2196f3;
 }
 
-.btn-labeled>b {
-    position: absolute;
-    top: -1px;
-    background-color: blue;
-    display: block;
-    line-height: 1;
-    padding: .62503rem
+.btn-labeled > b {
+  position: absolute;
+  top: -1px;
+  background-color: blue;
+  display: block;
+  line-height: 1;
+  padding: 0.62503rem;
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
 
@@ -214,8 +215,8 @@ body {
 }
 
 .dorime {
-    width: 100%;
-    height: 140vh;
+  width: 100%;
+  height: 140vh;
 }
 
 .dip_main_cert img {
@@ -225,8 +226,8 @@ body {
 }
 
 .dip_main_cert {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: 0;
 }
 
 .dip_main_cert .dip_school {
@@ -462,6 +463,8 @@ body {
   top: 10%;
   left: -5%;
   font-family: var(--font-gilroy-medium);
+  font-weight: bold;
+  font-size: var(--normal-text);
 }
 
 .cert_main_cert {
@@ -469,6 +472,15 @@ body {
   height: 100%;
   display: flex;
   /* margin-top: -2rem; */
+}
+
+.cert_main_cert p {
+  font-size: var(--normal-text);
+}
+
+.cert_date_issued {
+  font-size: var(--normal-text);
+  font-weight: bold;
 }
 
 .cert_main_cert img {
@@ -542,6 +554,10 @@ body {
   margin-top: 5px;
 }
 
+.cert_dates_stamps .cert_dates .cert_main_date {
+  border-bottom: 1px solid var(--pc-black);
+}
+
 .cert_dates span:nth-of-type(2) {
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -592,13 +608,20 @@ body {
 .cert_details_box h3 {
   color: var(--pc-orange);
   letter-spacing: 4px;
-  margin-top: -1.6rem;
+  margin-top: -0.6rem;
   margin-bottom: 1rem;
+}
+
+.cert_sign span {
+  border-top: 1px solid var(--pc-black);
+  color: var(--pc-black);
+  font-size: var(--normal-text);
 }
 
 .cert_notes {
   font-family: var(--font-gilroy-regular);
   color: var(--pc-black);
+  font-size: var(--normal-text);
 }
 
 .cert_notes a {
@@ -763,52 +786,47 @@ body {
     right: 0;
     text-align: center; /* Center the text horizontally */
   }
-  .cert_notes {
-    font-size: 13px;
-  }
 }
 
 /* ENTRY LEVEL CERTIFICATION SECTION */
 
-
-
 .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .1875rem
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.1875rem;
 }
 
 .card-img-actions {
-    position: relative
+  position: relative;
 }
 
 .card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-    text-align: center
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  text-align: center;
 }
 
 .card-title {
-    margin-top: 10px;
-    font-size: 17px
+  margin-top: 10px;
+  font-size: 17px;
 }
 
 .invoice-color {
-    color: red !important
+  color: red !important;
 }
 
 .card-header {
-    padding: .9375rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .02);
-    border-bottom: 1px solid rgba(0, 0, 0, .125)
+  padding: 0.9375rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
