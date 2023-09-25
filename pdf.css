@@ -216,7 +216,6 @@ body {
 .dip_container .dip_main_cert {
   border: 30px solid transparent;
   padding: 29px 30px;
-  /* border-image: url("./assets/Cert Outline.png") 100 round; */
 }
 
 .dorime {
