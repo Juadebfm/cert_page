@@ -9,6 +9,7 @@ body {
   color: #333;
   text-align: left;
   background-color: #eee;
+  height: 100vh;
 }
 
 .mt-50 {
@@ -198,7 +199,7 @@ body {
 
 .dip_container {
   width: 60vw;
-  height: 150vh;
+  /* height: 150vh; */
   padding: 20px 0 0 0;
   text-align: center;
   margin: auto;
@@ -441,7 +442,7 @@ body {
 @media (min-width: 767px) and (max-width: 900px) {
   .dip_container {
     width: 90vw;
-    height: 60vh;
+    /* height: 60vh; */
   }
 }
 

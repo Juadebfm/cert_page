@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const entryLevelContainer = document.querySelector(".cert_container");
   const diplomaLevelContainer = document.querySelector(".dip_container");
   const mainBody = document.getElementById("mainBody");
-  const download_btn = document.getElementById("download");
+
+  const download = document.getElementById("download");
+  download.style.display = "none";
 
   if (certificateId) {
     // Certificate ID is found in the URL
@@ -72,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const dipDay = document.getElementById("dip_day");
           const dipCertId = document.getElementById("dip_cert_id");
 
+          download.style.display = "block";
+
           dipFullName.textContent = result.full_name;
           dipCourseName.textContent = result.course_name;
           dipDay.textContent = result.date_issued;
@@ -79,18 +83,19 @@ document.addEventListener("DOMContentLoaded", function () {
           // Show the diploma level container and hide the entry level container
           entryLevelContainer.style.display = "none";
           diplomaLevelContainer.style.display = "block";
-          download_btn.style.display = "block";
         } else if (courseLevel === "Entrylevel") {
+          download.style.display = "block";
+
           const entry_cert_id = document.getElementById("entry_cert_id");
           entry_cert_id.textContent = result.certificate_id;
-          const cert_student_name = document.getElementById("cert_student_name")
-          cert_student_name.textContent = result.full_name
-          const cert_course_name = document.getElementById("cert_course_name")
-          cert_course_name.textContent = result.course_name
+          const cert_student_name =
+            document.getElementById("cert_student_name");
+          cert_student_name.textContent = result.full_name;
+          const cert_course_name = document.getElementById("cert_course_name");
+          cert_course_name.textContent = result.course_name;
 
           entryLevelContainer.style.display = "block";
           diplomaLevelContainer.style.display = "none";
-          download_btn.style.display = "block";
         } else {
           // Invalid course level
           mainBody.innerHTML = "";

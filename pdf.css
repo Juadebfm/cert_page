@@ -385,7 +385,6 @@ body {
   .dip_container .dip_main_cert {
     border: 30px solid transparent;
     padding: 10px;
-    /* border-image: url("./assets/Cert Outline.png") 100 round; */
   }
   .dip_main_cert img {
     width: 45%;
@@ -469,7 +468,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  margin-top: 2rem;
+  /* margin-top: -2rem; */
 }
 
 .cert_main_cert img {
@@ -480,7 +479,8 @@ body {
   padding-top: 1rem;
   width: max-content;
   position: absolute;
-  top: 55.2%;
+  top: 47.2%;
+  /* top: 55.2%; */
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -650,7 +650,7 @@ body {
     font-size: 15px;
   }
   #cert_student_name {
-    font-size: 40px;
+    font-size: 35px;
     margin-top: 0;
   }
   #entry_cert_id {
