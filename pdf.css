@@ -231,10 +231,10 @@ body {
 }
 
 .dip_main_cert .dip_school {
-  font-size: 35px;
+  font-size: 40px;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "Prosto One", cursive;
+  font-family: "Linux", sans-serif;
   width: 100%;
   color: var(--pc-blue);
 }
@@ -448,14 +448,14 @@ body {
 /* ENTRY LEVEL CERTIFICATION SECTION */
 .cert_container {
   width: 82vw;
-  height: 95vh;
+  height: 100vh; /*check here now*/
   text-align: center;
   margin: auto;
-  margin-top: 1.1rem;
+  margin-top: 5.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.1rem;
 }
 
 #entry_cert_id {
@@ -593,8 +593,13 @@ body {
   text-align: center; /* Center the text horizontally */
 }
 
-.cert_details_box h2 {
+.cert_details_box #cert_student_name {
   padding: 0;
+  text-decoration: none;
+  border-bottom: 3px solid black;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .cert_details_box h2:nth-of-type(1) {
