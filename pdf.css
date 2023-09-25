@@ -216,11 +216,18 @@ body {
 .dip_container .dip_main_cert {
   border: 30px solid transparent;
   padding: 29px 30px;
+  /* border-image: url("./assets/Cert Outline.png") 100 round; */
 }
 
 .dorime {
   width: 100%;
-  height: 156vh;
+  height: 146vh;
+}
+
+@media screen and (min-width: 1500px) and (max-width: 2000px) {
+  .dorime {
+    max-height: 150vh;
+  }
 }
 
 .dip_main_cert img {
