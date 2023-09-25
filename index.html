@@ -7,9 +7,11 @@
     <title>PluralCode Certification</title>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="pdf.css" />
     <script src="pdf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
@@ -17,115 +19,131 @@
 
   <body>
     <div id="error_message"></div>
-    <div
-      class="container d-flex justify-content-center mt-50 mb-50"
-      id="mainBody"
-    >
-      <div class="row">
-        <div class="col-md-12 text-right mb-3">
-          <button class="btn btn-primary" id="download_cert">
-            Download
-          </button>
-          <button class="btn btn-primary" id="download_dip">Download</button>
-        </div>
-        <div class="col-md-12">
-          <div class="card" id="invoice">
-            <div class="dip_container" style="display: none">
-              <img src="./assets/Cert Outline.png" alt="" class="dorime" />
-              <div class="dip_main_cert">
-                <img src="./assets/PluralCode 2 1.png" alt="Pluralcode Logo" />
-                <span class="dip_school d-block">---</span>
-                <small>The Founder & Board of</small>
-                <br />
-                <span class="dip_academy">PluralCode Academy,</span>
-                <br /><br />
-                <p>
-                  acting on recommendation of the Faculty Head for
-                  <span id="dip_school_b"></span> have conferred upon
-                </p>
+    <div class="" id="mainBody">
+      <div class="diploma-section">
+        <button class="btn btn-primary" id="download_dip">Download</button>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card" id="invoice">
+              <div class="dip_container" style="display: none">
+                <img src="./assets/Cert Outline.png" alt="" class="dorime" />
+                <div class="dip_main_cert">
+                  <img
+                    src="./assets/PluralCode 2 1.png"
+                    alt="Pluralcode Logo"
+                  />
+                  <span class="dip_school d-block">---</span>
+                  <small>The Founder & Board of</small>
+                  <br />
+                  <span class="dip_academy">PluralCode Academy,</span>
+                  <br /><br />
+                  <p>
+                    acting on recommendation of the Faculty Head for
+                    <span id="dip_school_b"></span> have conferred upon
+                  </p>
 
-                <span class="dip_student_name d-block" id="dip_student_name"
-                  >---</span
-                >
+                  <span class="dip_student_name d-block" id="dip_student_name"
+                    >---</span
+                  >
 
-                <p>
-                  a professional <b id="dip_course_name">---</b>. The
-                  aforementioned person is determined to have demonstrated
-                  mastery of the subject and met all standards for
-                  certification. <br />
-                  Hereunder is placed our names as well as the seal of
-                  PluralCode Academy as testament on this day
-                  <span id="dip_day">March 11, 2023</span>
-                </p>
+                  <p>
+                    a professional <b id="dip_course_name">---</b>. The
+                    aforementioned person is determined to have demonstrated
+                    mastery of the subject and met all standards for
+                    certification. <br />
+                    Hereunder is placed our names as well as the seal of
+                    PluralCode Academy as testament on this day
+                    <span id="dip_day">March 11, 2023</span>
+                  </p>
 
-                <div class="dip_stamp_sign_section mt-50">
-                  <div class="dip_line"></div>
-                  <div class="dip_sign">
-                    <div class="dip_sign_Founder">
-                      <img src="./assets/sign1.png" alt="" />
-                    </div>
-                    <div class="dip_sign_HOF">
-                      <img src="./assets/bn.png" alt="" />
-                    </div>
-                  </div>
-                  <div class="dip_stamps_codes">
-                    <img src="./assets/stamp.png" alt="" />
-                    <div class="dip_bar_code">
-                      <div class="dip_qr">
-                        <img src="./assets/qr_code.svg" alt="" />
+                  <div class="dip_stamp_sign_section mt-50">
+                    <div class="dip_line"></div>
+                    <div class="dip_sign">
+                      <div class="dip_sign_Founder">
+                        <img src="./assets/sign1.png" alt="" />
+                      </div>
+                      <div class="dip_sign_HOF">
+                        <img src="./assets/bn.png" alt="" />
                       </div>
                     </div>
-                    <div class="dip_certificate_id">
-                      <span>Certificate ID:</span>
-                      <span id="dip_cert_id">J20230423455</span>
+                    <div class="dip_stamps_codes">
+                      <img src="./assets/stamp.png" alt="" />
+                      <div class="dip_bar_code">
+                        <div class="dip_qr">
+                          <img src="./assets/qr_code.svg" alt="" />
+                        </div>
+                      </div>
+                      <div class="dip_certificate_id">
+                        <span>Certificate ID:</span>
+                        <span id="dip_cert_id">J20230423455</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="cert-section">
+        <button class="btn btn-primary" id="download_cert">Download</button>
+        <div class="row" id="invoice_cert">
+          <div class="col-sm-12 col-md-12 col-lg-2">
+            <div class="right-img">
+              <img src="./assets/Left Shapes.png" alt="" />
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 offset-lg-2 col-lg-5">
             <div class="cert_container" style="display: none">
               <div class="cert_main_cert">
-                <img src="./assets/new Temp (1).png" />
-
-                <div class="cert_details_box">
-                  <img src="./assets/PluralCode 2 1.png" alt="" class="logo" />
-                  <span id="entry_cert_id">---</span>
-                  <h2>Certificate</h2>
-                  <h3>OF COMPLETION</h3>
-                  <p>This certificate is proudly presented to</p>
-                  <h2 id="cert_student_name">---</h2>
-                  <p>
-                    For successfully completing the
-                    <span id="cert_course_name"></span> program
-                  </p>
-                  <div class="cert_dates_stamps">
-                    <div class="cert_dates">
-                      <div class="cert_main_date">
-                        <p>Date Issued</p>
-                        <span class="cert_date_issued"></span>
+                <center>
+                  <div class="cert_details_box">
+                    <img src="./assets/PluralCode 2 1.png" alt="" class="logo" />
+                    <span id="entry_cert_id">---</span>
+                    <h2>Certificate</h2>
+                    <h3>OF COMPLETION</h3>
+                    <p>This certificate is proudly presented to</p>
+                    <h2 id="cert_student_name">---</h2>
+                    <p>
+                      For successfully completing the
+                      <span id="cert_course_name"></span> program
+                    </p>
+                    <div class="cert_dates_stamps">
+                      <div class="cert_dates">
+                        <div class="cert_main_date">
+                          <p>Date Issued</p>
+                          <span class="cert_date_issued"></span>
+                        </div>
+                      </div>
+                      <div class="cert_stamp">
+                        <img src="./assets/Group 20705.png" alt="" />
+                        <div class="cert_stamp_date">1000</div>
+                      </div>
+                      <div class="cert_sign">
+                        <img src="./assets/sign1.png" alt="" />
+                        <span><b>Head Of Academy</b></span>
                       </div>
                     </div>
-                    <div class="cert_stamp">
-                      <img src="./assets/Group 20705.png" alt="" />
-                      <div class="cert_stamp_date">1000</div>
-                    </div>
-                    <div class="cert_sign">
-                      <img src="./assets/sign1.png" alt="" />
-                      <span><b>Head Of Academy</b></span>
-                    </div>
-                  </div>
-                  <span class="cert_notes"
-                    >Note: To verify this certificate, visit
-                    <a
-                      href="https://pluralcode.institute/verify-certificate"
-                      target="_blank"
-                      >www.pluralcode.institute/verify-certificate</a
+                    <span class="cert_notes"
+                      >Note: To verify this certificate, visit
+                      <a
+                        href="https://pluralcode.institute/verify-certificate"
+                        target="_blank"
+                        >www.pluralcode.institute/verify-certificate</a
+                      >
+                      and enter certificate ID</span
                     >
-                    and enter certificate ID</span
-                  >
-                </div>
+                  </div>
+                </center>
+
+                
               </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-3">
+            <div class="left-img">
+              <img src="./assets/Right Shapes.png" alt="" srcset="" />
             </div>
           </div>
         </div>
