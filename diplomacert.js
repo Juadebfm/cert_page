@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const diplomaLevelContainer = document.querySelector(".dip_container");
   const mainBody = document.getElementById("mainBody");
 
-  const download = document.getElementById("download");
-  download.style.display = "none";
+  const download_cert = document.getElementById("download_cert");
+  const download_dip = document.getElementById("download_dip");
+
+  download_cert.style.display = "none";
+  download_dip.style.display = "none";
 
   if (certificateId) {
     // Certificate ID is found in the URL
@@ -74,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const dipDay = document.getElementById("dip_day");
           const dipCertId = document.getElementById("dip_cert_id");
 
-          download.style.display = "block";
+          download_dip.style.display = "block";
 
           dipFullName.textContent = result.full_name;
           dipCourseName.textContent = result.course_name;
@@ -84,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
           entryLevelContainer.style.display = "none";
           diplomaLevelContainer.style.display = "block";
         } else if (courseLevel === "Entrylevel") {
-          download.style.display = "block";
+          download_cert.style.display = "block";
 
           const entry_cert_id = document.getElementById("entry_cert_id");
           entry_cert_id.textContent = result.certificate_id;
