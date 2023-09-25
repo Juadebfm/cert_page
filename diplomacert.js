@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorMessageElement = document.getElementById("error_message");
 
   // Get the content containers for different course levels
-  const entryLevelContainer = document.querySelector(".cert_container");
+  const entryLevelContainer = document.querySelector(".cert-section");
   const diplomaLevelContainer = document.querySelector(".dip_container");
   const mainBody = document.getElementById("mainBody");
 
