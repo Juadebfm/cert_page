@@ -440,7 +440,7 @@ body {
 @media (min-width: 767px) and (max-width: 900px) {
   .dip_container {
     width: 90vw;
-    /* height: 60vh; */
+    height: 100%;
   }
 }
 
@@ -641,7 +641,7 @@ body {
   }
   .cert_container {
     width: 98vw;
-    height: 50vh; 
+    height: 50vh;
     margin-top: 1.1rem;
   }
   .cert_details_box {
