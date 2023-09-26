@@ -892,7 +892,7 @@
                     src="./assets/PluralCode 2 1.png"
                     alt="Pluralcode Logo"
                   />
-                  <span class="dip_school d-block">---</span>
+                  <span class="dip_school d-block">---</span> <br>
                   <small>The Founder & Board of</small>
                   <br />
                   <span class="dip_academy">PluralCode Academy,</span>
@@ -966,7 +966,6 @@
         const download_cert = document.getElementById("download_cert");
         const download_dip = document.getElementById("download_dip");
 
-        download_cert.style.display = "none";
         download_dip.style.display = "none";
 
         if (certificateId) {
@@ -1035,8 +1034,7 @@
                 dipCourseName.textContent = result.course_name;
                 dipDay.textContent = result.date_issued;
                 dipCertId.textContent = result.certificate_id;
-                // Show the diploma level container and hide the entry level container
-                entryLevelContainer.style.display = "none";
+
                 diplomaLevelContainer.style.display = "block";
               } else {
                 // Invalid course level
@@ -1066,17 +1064,6 @@
           errorMessageElement.style.display = "block";
         }
       });
-
-      // extra help codes
-
-      // Get the current year
-      const currentYear = new Date().getFullYear();
-
-      // Find the div element
-      const certStampDate = document.querySelector(".cert_stamp_date");
-
-      // Set the current year as its content
-      certStampDate.textContent = currentYear;
     </script>
   </body>
 </html>
