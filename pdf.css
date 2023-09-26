@@ -408,11 +408,17 @@ body {
   }
   .dip_main_cert .dip_academy {
     font-family: "Libre Baskerville", serif;
-    font-size: 25px;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -1.5rem;
+    display: block;
+    line-height: 1.3;
+    width: 100%;
     color: var(--pc-blue);
   }
   .dip_main_cert p {
-    width: 80%;
+    width: 100%;
     font-size: 15px;
   }
   .dip_stamp_sign_section {
@@ -422,7 +428,7 @@ body {
   .dip_qr {
     width: 100%;
     margin-top: 2rem;
-    margin-left: 3rem;
+    margin-left: 2.8rem;
     /* height: 70px; */
   }
   .dip_certificate_id {
@@ -445,6 +451,10 @@ body {
     top: -40px;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .dorime {
+    width: 100%;
+    height: 900px;
   }
 }
 

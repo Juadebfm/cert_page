@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Get the content containers for different course levels
   const entryLevelContainer = document.querySelector(".cert-section");
-  const diplomaLevelContainer = document.querySelector(".dip_container");
+  const diplomaLevelContainer = document.querySelector(".diploma-section");
   const mainBody = document.getElementById("mainBody");
 
   const download_cert = document.getElementById("download_cert");
@@ -154,9 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
         mainBody.appendChild(errorMessageElement);
       });
   } else {
-    // Certificate ID is not found in the URL
-
-    // Display the error message
+    mainBody.innerHTML = "";
+    
     errorMessageElement.textContent = "Certificate ID not found";
     errorMessageElement.style.display = "block";
   }
