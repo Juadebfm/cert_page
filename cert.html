@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PluralCode Certificate</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 0.8125rem;
+        font-weight: 400;
+        line-height: 1.5385;
+        color: #333;
+        text-align: left;
+        background-color: #eee;
+        /* overflow-x: hidden; */
+      }
+
+      .mainBody {
+        /* margin: 0 30px 0 40px;  */
+      }
+
+      .mt-50 {
+        margin-top: 25px;
+      }
+
+      .mb-50 {
+        margin-bottom: 50px;
+      }
+
+      .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.1875rem;
+      }
+
+      .card-img-actions {
+        position: relative;
+      }
+
+      .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+        text-align: center;
+      }
+
+      .card-title {
+        margin-top: 10px;
+        font-size: 17px;
+      }
+
+      .invoice-color {
+        color: red !important;
+      }
+
+      .card-header {
+        padding: 0.9375rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      }
+
+      a {
+        text-decoration: none !important;
+      }
+
+      .btn-light {
+        color: #333;
+        background-color: #fafafa;
+        border-color: #ddd;
+      }
+
+      .header-elements-inline {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+      }
+
+      @media (min-width: 768px) {
+        .wmin-md-400 {
+          min-width: 400px !important;
+        }
+      }
+
+      .btn-primary {
+        color: #fff;
+        background-color: #2196f3;
+      }
+
+      .btn-labeled > b {
+        position: absolute;
+        top: -1px;
+        background-color: blue;
+        display: block;
+        line-height: 1;
+        padding: 0.62503rem;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+      @font-face {
+        font-family: "Gilroy_Thin";
+        src: url(../assets/fonts/Gilroy-Thin.ttf);
+      }
+      @font-face {
+        font-family: "Gilroy_Italic";
+        src: url(../assets/fonts/Gilroy-LightItalic.ttf);
+      }
+      @font-face {
+        font-family: "Gilroy_Regular";
+        src: url(../assets/fonts/Gilroy-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Gilroy_Medium";
+        src: url(../assets/fonts/Gilroy-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Gilroy_Semibold";
+        src: url(../assets/fonts/Gilroy-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Gilroy_Bold";
+        src: url(../assets/fonts/Gilroy-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Gilroy_Black";
+        src: url(../assets/fonts/Gilroy-Black.ttf);
+      }
+      @font-face {
+        font-family: "Linux";
+        src: url(./assets/linux_libertine/LinLibertine_R.ttf);
+      }
+      @font-face {
+        font-family: "Boston";
+        src: url(./assets/boston-angel/Boston\ Angel\ Regular.ttf);
+      }
+      @font-face {
+        font-family: "Motorway";
+        src: url(./Motorway\ W01\ SemiBold.ttf);
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+      :root {
+        /* //font family */
+        --font-gilroy-thin: "Gilroy_Thin", sans-serif;
+        --font-gilroy-italic: "Gilroy_Italic", sans-serif;
+
+        --font-gilroy-regular: "Gilroy_Regular", sans-serif;
+        --font-gilroy-medium: "Gilroy_Medium", sans-serif;
+        --font-gilroy-semibold: "Gilroy_Semibold", sans-serif;
+        --font-gilroy-bold: "Gilroy_Bold", sans-serif;
+        --font-gilroy-black: "Gilroy_Black", sans-serif;
+
+        --font-linux-regular: "Linux", sans-serif;
+        --font-boston-regular: "Boston", sans-serif;
+        --font-motorway-regular: "Motorway", sans-serif;
+
+        /* //font size */
+        --heading-1: 28px;
+        --heading-2: 22px;
+        --big-text: 18px;
+        --normal-text: 16px;
+        --small-text: 14px;
+        /* //colors */
+        --pc-blue: #222057;
+        --pc-black: #232323;
+        --pc-orange: #f8991d;
+        --pc-light-gray: #939393;
+        --pc-dark-gray: #323232;
+        --pc-white-white: #ffffff;
+        --pc-bg: #f5f6fa;
+      }
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        position: relative;
+        padding-top: 3rem;
+      }
+
+      /* DIPLOMA CERTIFICATION SECTION */
+
+      .dip_container {
+        width: 60vw;
+        height: 180vh;
+        padding: 20px 0 0 0;
+        text-align: center;
+        margin: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+      }
+
+      .dip_container .dip_main_cert {
+        border: 30px solid transparent;
+        padding: 29px 30px;
+        /* border-image: url("./assets/Cert Outline.png") 100 round; */
+      }
+
+      .dorime {
+        width: 100%;
+        height: 1000px;
+      }
+
+      /* @media screen and (min-width: 1500px) and (max-width: 2000px) {
+  .dorime {
+    height: 150vh;
+  }
+} */
+
+      .dip_main_cert img {
+        width: 25%;
+        display: block;
+        margin-bottom: 3.5rem;
+      }
+
+      .dip_main_cert {
+        position: absolute;
+        top: 0;
+      }
+
+      .dip_main_cert .dip_school {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Linux", sans-serif;
+        width: 100%;
+        color: var(--pc-blue);
+      }
+
+      .dip_main_cert small:nth-of-type(1) {
+        font-family: var(--font-linux-regular);
+        font-size: 17px;
+        color: var(--pc-black);
+      }
+
+      .dip_main_cert .dip_academy {
+        font-family: "Libre Baskerville", serif;
+        font-size: 40px;
+        color: var(--pc-blue);
+      }
+
+      .dip_main_cert .dip_student_name {
+        font-family: "Libre Baskerville", serif;
+        font-size: 40px;
+        color: var(--pc-blue);
+      }
+
+      .dip_main_cert p {
+        font-family: var(--font-linux-regular);
+        width: 60%;
+        margin: auto;
+        font-size: 17px;
+        line-height: 1.2;
+        color: var(--pc-black);
+      }
+
+      .dip_bar_code {
+        margin-top: -2rem;
+        margin-bottom: 0rem;
+        height: 125px;
+      }
+
+      .dip_stamp_sign_section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center center;
+        position: relative;
+      }
+
+      .dip_stamp_sign_section .dip_sign {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dip_stamps_codes {
+        display: grid;
+        grid-template-columns: 100%;
+        place-items: center center;
+      }
+
+      .dip_line {
+        height: 80%;
+        width: 3px;
+        background-color: var(--pc-black);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .dip_certificate_id {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.2rem;
+        font-family: var(--font-gilroy-regular);
+        font-weight: bold;
+      }
+
+      .dip_certificate_id span:nth-of-type(2) {
+        font-family: var(--font-gilroy-medium);
+        font-weight: bold;
+      }
+
+      .dip_sign {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        gap: 5rem;
+      }
+
+      .dip_sign_HOF,
+      .dip_sign_Founder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 50px;
+        gap: 3rem;
+      }
+
+      .dip_sign_HOF img,
+      .dip_sign_Founder img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .dip_qr {
+        /* margin-left: 15rem; */
+        width: 150px;
+        height: 150px;
+      }
+
+      .dip_qr img {
+        width: 100%;
+      }
+
+      .download_btn {
+        background-color: var(--pc-orange);
+        margin-top: 3rem;
+        padding: 10px 18px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        font-family: var(--font-gilroy-medium);
+        font-size: var(--small-text);
+        cursor: pointer;
+        position: absolute;
+        top: -35px; /* Set the top position to 0 to align with the top of the page */
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .download_btn:hover {
+        opacity: 0.9;
+      }
+      #error_message {
+        font-size: 20px;
+        color: #ff0000;
+        text-transform: capitalize;
+        font-family: var(--font-gilroy-medium);
+        text-align: center;
+        padding-top: 3rem;
+      }
+
+      @media (max-width: 767px) {
+        .dip_container {
+          width: 100%;
+          height: 100%;
+          padding: 0px;
+        }
+        .dip_container .dip_main_cert {
+          border: 30px solid transparent;
+          padding: 10px;
+        }
+        .dip_main_cert img {
+          width: 45%;
+          display: block;
+          margin-bottom: 1.5rem;
+        }
+        .dip_main_cert .dip_school {
+          font-size: 32px;
+        }
+        .dip_main_cert .dip_academy {
+          font-family: "Libre Baskerville", serif;
+          font-size: 28px;
+          margin: 0;
+          padding: 0;
+          margin-bottom: -1.5rem;
+          display: block;
+          line-height: 1.3;
+          width: 100%;
+          color: var(--pc-blue);
+        }
+        .dip_main_cert p {
+          width: 100%;
+          font-size: 15px;
+        }
+        .dip_stamp_sign_section {
+          width: 100%;
+          padding: 0;
+        }
+        .dip_qr {
+          width: 100%;
+          margin-top: 2rem;
+          margin-left: 2.8rem;
+          /* height: 70px; */
+        }
+        .dip_certificate_id {
+          margin-top: 0rem;
+        }
+        .dip_certificate_id span:nth-of-type(2) {
+          font-size: 12px;
+        }
+        .download_btn {
+          background-color: var(--pc-orange);
+          margin-top: 3rem;
+          padding: 10px 18px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          font-family: var(--font-gilroy-medium);
+          font-size: var(--small-text);
+          cursor: pointer;
+          position: absolute;
+          top: -40px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .dorime {
+          width: 100%;
+          height: 900px;
+        }
+      }
+
+      @media (min-width: 767px) and (max-width: 900px) {
+        .dip_container {
+          width: 90vw;
+          height: 100%;
+        }
+      }
+
+      /* DIPLOMA CERTIFICATION SECTION */
+      /* ENTRY LEVEL CERTIFICATION SECTION */
+      .cert_container {
+        /* width: 80vw; */
+        /* height: 80vh; */
+        text-align: center;
+        margin: auto;
+        margin-top: 5.1rem;
+        /* display: flex; */
+        /* justify-content: center; */
+        align-items: center;
+        margin-bottom: 1.1rem;
+      }
+
+      #entry_cert_id {
+        position: absolute;
+        top: 10%;
+        left: -5%;
+        font-family: var(--font-gilroy-medium);
+        font-weight: bold;
+        font-size: var(--normal-text);
+      }
+
+      .cert_main_cert {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        /* margin-top: -2rem; */
+      }
+
+      .cert_main_cert p {
+        font-size: var(--normal-text);
+      }
+
+      .cert_date_issued {
+        font-size: var(--normal-text);
+        font-weight: bold;
+      }
+
+      .cert_main_cert img {
+        width: 100%;
+      }
+
+      .cert_details_box {
+        padding-top: 1rem;
+        width: max-content;
+        position: absolute;
+        top: 51.2%;
+        /* top: 55.2%; */
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .cert_details_box .logo {
+        width: 25%;
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
+      }
+
+      .cert_details_box p:nth-of-type(1) {
+        font-family: var(--font-gilroy-medium);
+        margin-bottom: 11px;
+      }
+
+      .cert_details_box h2 {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        font-family: "Sacramento", cursive;
+        font-size: 60px;
+      }
+
+      .cert_details_box p:nth-of-type(2) {
+        font-family: var(--font-gilroy-medium);
+        margin-bottom: 6px;
+      }
+
+      .cert_details_box p:nth-of-type(2) span {
+        margin-top: 15px;
+        font-family: var(--font-gilroy-bold);
+      }
+
+      .cert_details_box p:nth-of-type(3) span {
+        margin-top: 15px;
+        font-family: var(--font-gilroy-bold);
+      }
+
+      .cert_details_box p {
+        font-size: 17px;
+      }
+      .cert_dates_stamps {
+        width: 80%;
+        margin: auto;
+        margin-top: 6rem;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: relative;
+      }
+
+      .cert_dates * {
+        width: 100%;
+        font-family: var(--font-gilroy-regular);
+      }
+
+      .cert_dates span {
+        display: block;
+        margin-top: 5px;
+      }
+
+      .cert_dates_stamps .cert_dates .cert_main_date {
+        border-bottom: 1px solid var(--pc-black);
+      }
+
+      .cert_dates span:nth-of-type(2) {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .cert_dates_stamps .cert_dates {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cert_dates_stamps .cert_stamp {
+        position: relative;
+      }
+
+      .cert_dates_stamps .cert_stamp img {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 180px;
+      }
+
+      .cert_stamp_date {
+        color: #f7e9b2;
+        position: absolute;
+        font-family: var(--font-motorway-regular);
+        bottom: 38%;
+        left: 0;
+        right: 0;
+        text-align: center; /* Center the text horizontally */
+      }
+
+      .cert_details_box #cert_student_name {
+        padding: 0;
+        text-decoration: none;
+        border-bottom: 3px solid black;
+        width: max-content;
+        margin: auto;
+        margin-bottom: 1rem;
+      }
+
+      .cert_details_box h2:nth-of-type(1) {
+        font-family: var(--font-boston-regular);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--pc-blue);
+        margin: 0;
+      }
+
+      .cert_details_box h3 {
+        color: var(--pc-orange);
+        letter-spacing: 4px;
+        margin-top: -0.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .cert_sign span {
+        border-top: 1px solid var(--pc-black);
+        color: var(--pc-black);
+        font-size: var(--normal-text);
+      }
+
+      .cert_notes {
+        font-family: var(--font-gilroy-regular);
+        color: var(--pc-black);
+        font-size: var(--normal-text);
+      }
+
+      .cert_notes a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      @media (max-width: 767px) {
+        body {
+          width: 100%;
+        }
+        .cert_container {
+          width: 98vw;
+          height: 50vh;
+          margin-top: 1.1rem;
+        }
+        .cert_details_box {
+          width: 100%;
+          height: 100%;
+          padding-top: 0rem;
+          width: max-content;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .cert_main_cert img {
+          width: 100%;
+          height: auto;
+        }
+        .cert_main_cert * {
+          width: 100%;
+          height: auto;
+        }
+        .cert_details_box h2:nth-of-type(1) {
+          font-size: 40px;
+          margin-top: 0rem;
+          margin-bottom: 0.5rem;
+        }
+        .cert_details_box p {
+          font-size: 15px;
+        }
+        .cert_details_box p:nth-of-type(1) {
+          margin-bottom: 0px;
+        }
+        .cert_details_box p:nth-of-type(2) {
+          font-size: 15px;
+        }
+        #cert_student_name {
+          font-size: 35px;
+          margin-top: 0;
+        }
+        #entry_cert_id {
+          position: absolute;
+          top: 5%;
+          left: -35%;
+          font-size: 10px;
+        }
+        .cert_dates_stamps .cert_stamp img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto;
+          height: 100%;
+        }
+        .cert_dates_stamps {
+          width: 100%;
+          margin: auto;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          position: relative;
+        }
+        .cert_stamp_date {
+          font-size: 10px;
+          bottom: 23%;
+          left: 0;
+          right: 0;
+          text-align: center; /* Center the text horizontally */
+        }
+        .cert_notes {
+          font-size: 13px;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1030px) {
+        body {
+          width: 100%;
+        }
+        .cert_container {
+          width: 98vw;
+          height: 50vh;
+          margin-top: 5rem;
+          /* text-shadow: 0px 0px 1px #8a8a8a; */
+        }
+        .cert_details_box {
+          width: 100%;
+          height: 100%;
+          padding-top: 0rem;
+          width: max-content;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .cert_main_cert img {
+          width: 100%;
+          height: auto;
+        }
+        .cert_main_cert * {
+          width: 100%;
+          height: auto;
+        }
+        .cert_details_box h2:nth-of-type(1) {
+          font-size: 40px;
+          margin-top: 0rem;
+          margin-bottom: 0.5rem;
+        }
+        .cert_details_box p {
+          font-size: 15px;
+        }
+        .cert_details_box p:nth-of-type(1) {
+          margin-bottom: 0px;
+        }
+        .cert_details_box p:nth-of-type(2) {
+          font-size: 15px;
+        }
+        #cert_student_name {
+          font-size: 40px;
+          margin-top: 0;
+        }
+        #entry_cert_id {
+          position: absolute;
+          top: 5%;
+          left: -35%;
+          font-size: 10px;
+        }
+        .cert_dates_stamps .cert_stamp img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto;
+          height: 100%;
+        }
+        .cert_dates_stamps {
+          width: 100%;
+          margin: auto;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          position: relative;
+        }
+        .cert_stamp_date {
+          font-size: 10px;
+          bottom: 23%;
+          left: 0;
+          right: 0;
+          text-align: center; /* Center the text horizontally */
+        }
+      }
+
+      /* ENTRY LEVEL CERTIFICATION SECTION */
+
+      .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.1875rem;
+      }
+
+      .card-img-actions {
+        position: relative;
+      }
+
+      .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+        text-align: center;
+      }
+
+      .card-title {
+        margin-top: 10px;
+        font-size: 17px;
+      }
+
+      .invoice-color {
+        color: red !important;
+      }
+
+      .card-header {
+        padding: 0.9375rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      }
+
+      .left-img img,
+      .right-img img {
+        /* width: 100%; */
+        height: 100vh;
+      }
+      .overf {
+        overflow-y: hidden;
+      }
+
+      .row {
+        margin: 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="error_message"></div>
+    <div id="mainBody">
+      <div class="cert-section">
+        <button class="btn btn-primary" id="download_cert">Download</button>
+        <div class="row" id="invoice_cert">
+          <div class="col-sm-12 col-md-12 col-lg-2">
+            <div class="right-img">
+              <img src="./assets/Left Shapes.png" alt="" />
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 offset-lg-2 col-lg-5">
+            <div class="cert_container" style="display: none">
+              <div class="cert_main_cert">
+                <center>
+                  <div class="cert_details_box">
+                    <img
+                      src="./assets/PluralCode 2 1.png"
+                      alt=""
+                      class="logo"
+                    />
+                    <span id="entry_cert_id">---</span>
+                    <h2>Certificate</h2>
+                    <h3>OF COMPLETION</h3>
+                    <p>This certificate is proudly presented to</p>
+                    <h2 id="cert_student_name">---</h2>
+                    <p>
+                      For successfully completing the
+                      <span id="cert_course_name"></span> program
+                    </p>
+                    <div class="cert_dates_stamps">
+                      <div class="cert_dates">
+                        <div class="cert_main_date">
+                          <p>Date Issued</p>
+                          <span class="cert_date_issued"></span>
+                        </div>
+                      </div>
+                      <div class="cert_stamp">
+                        <img src="./assets/Group 20705.png" alt="" />
+                        <div class="cert_stamp_date">1000</div>
+                      </div>
+                      <div class="cert_sign">
+                        <img src="./assets/sign1.png" alt="" />
+                        <span><b>Head Of Academy</b></span>
+                      </div>
+                    </div>
+                    <span class="cert_notes"
+                      >Note: To verify this certificate, visit
+                      <a
+                        href="https://pluralcode.institute/verify-certificate"
+                        target="_blank"
+                        >www.pluralcode.institute/verify-certificate</a
+                      >
+                      and enter certificate ID</span
+                    >
+                  </div>
+                </center>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-3">
+            <div class="left-img">
+              <img src="./assets/Right Shapes.png" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
