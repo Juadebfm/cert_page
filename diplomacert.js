@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const download_cert = document.getElementById("download_cert");
   const download_dip = document.getElementById("download_dip");
 
-  download_cert.style.display = "none";
+  // download_cert.style.display = "none";
   download_dip.style.display = "none";
 
   if (certificateId) {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   } else {
     mainBody.innerHTML = "";
-    
+
     errorMessageElement.textContent = "Certificate ID not found";
     errorMessageElement.style.display = "block";
   }
