@@ -466,6 +466,7 @@ body {
 }
 
 /* DIPLOMA CERTIFICATION SECTION */
+
 /* ENTRY LEVEL CERTIFICATION SECTION */
 .cert_container {
   /* width: 80vw; */
@@ -814,7 +815,6 @@ body {
 }
 
 /* ENTRY LEVEL CERTIFICATION SECTION */
-
 .card {
   position: relative;
   display: -ms-flexbox;

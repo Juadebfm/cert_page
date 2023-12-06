@@ -11,8 +11,9 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
       integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
@@ -25,15 +26,6 @@
   </head>
 
   <body>
-    <button id="btn-two" class="btn btn-success btn-lg">
-      Generate PDF From iFrame
-    </button>
-
-    <iframe
-      id="frame"
-      style="width: 100%; border: 0; height: 0"
-      src="./dip.html"
-    ></iframe>
     <div id="error_message"></div>
     <div id="mainBody">
       <div class="diploma-section">
@@ -102,72 +94,56 @@
         </div>
       </div>
 
+      <div class="im-rap">
+        <img src="./assets/ent.png" alt="" class="w-100" />
+      </div>
       <div class="cert-section">
-        <button class="btn btn-primary" id="download_cert">Download</button>
-        <div class="row" id="invoice_cert">
-          <div class="col-sm-12 col-md-12 col-lg-2">
-            <div class="right-img">
-              <img src="./assets/Left Shapes.png" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-12 offset-lg-2 col-lg-5">
-            <div class="cert_container" style="display: none">
-              <div class="cert_main_cert">
-                <center>
-                  <div class="cert_details_box">
-                    <img
-                      src="./assets/PluralCode 2 1.png"
-                      alt=""
-                      class="logo"
-                    />
-                    <span id="entry_cert_id">---</span>
-                    <h2>Certificate</h2>
-                    <h3>OF COMPLETION</h3>
-                    <p>This certificate is proudly presented to</p>
-                    <h2 id="cert_student_name">---</h2>
-                    <p>
-                      For successfully completing the
-                      <span id="cert_course_name"></span> program
-                    </p>
-                    <div class="cert_dates_stamps">
-                      <div class="cert_dates">
-                        <div class="cert_main_date">
-                          <p>Date Issued</p>
-                          <span class="cert_date_issued"></span>
-                        </div>
-                      </div>
-                      <div class="cert_stamp">
-                        <img src="./assets/Group 20705.png" alt="" />
-                        <div class="cert_stamp_date">1000</div>
-                      </div>
-                      <div class="cert_sign">
-                        <img src="./assets/sign1.png" alt="" />
-                        <span><b>Head Of Academy</b></span>
+        <div id="invoice_cert">
+          <div class="cert_container">
+            <div class="cert_main_cert">
+              <center>
+                <div class="cert_details_box">
+                  <p class="">This certificate is proudly presented to</p>
+                  <h2 id="cert_student_name"></h2>
+                  <p>
+                    For successfully completing the
+                    <span id="cert_course_name"></span> program
+                  </p>
+                  <div class="cert_dates_stamps">
+                    <div class="cert_dates">
+                      <div class="cert_main_date">
+                        <p>Date Issued</p>
+                        <span class="cert_date_issued"></span>
+                        <hr class="sig-line" />
+                        <p class="mt-2"><b>Date</b></p>
                       </div>
                     </div>
-                    <span class="cert_notes"
-                      >Note: To verify this certificate, visit
-                      <a
-                        href="https://pluralcode.institute/verify-certificate"
-                        target="_blank"
-                        >www.pluralcode.institute/verify-certificate</a
-                      >
-                      and enter certificate ID</span
-                    >
+                    <div class="cert_stamp">
+                      <img src="./assets/Group 20705.png" alt="" />
+                      <div class="cert_stamp_date">1000</div>
+                    </div>
+                    <div class="cert_sign mt-3">
+                      <img src="./assets/sign1.png" alt="" />
+                      <hr class="sig-line" />
+                      <p class="mt-2"><b>Head Of Academy</b></p>
+                    </div>
                   </div>
-                </center>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-3">
-            <div class="left-img">
-              <img src="./assets/Right Shapes.png" alt="" srcset="" />
+                  <span class="cert_notes ml-4"
+                    >Note: To verify this certificate, visit
+                    <a
+                      href="https://pluralcode.institute/verify-certificate"
+                      target="_blank"
+                      >www.pluralcode.institute/verify-certificate</a
+                    >
+                    and enter certificate ID</span
+                  >
+                </div>
+              </center>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="./diplomacert.js"></script>
-    <script src="./test.js"></script>
   </body>
 </html>

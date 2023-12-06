@@ -21,10 +21,9 @@ window.onload = function () {
       filename: "myfile.pdf",
       image: { type: "png", quality: 0.98 },
       html2canvas: {
-        scale: 2
-        ,
+        scale: 2,
       },
-      jsPDF: { unit: "in", format: "letter", orientation: "landscape" },
+      jsPDF: { unit: "px", orientation: "landscape" },
     };
     html2pdf().from(invoice).set(opt).save();
   });
