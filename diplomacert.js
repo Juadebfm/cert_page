@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
           entryLevelContainer.style.display = "none";
           diplomaLevelContainer.style.display = "block";
         } else if (courseLevel === "Entrylevel") {
-          download_cert.style.display = "block";
+          // download_cert.style.display = "block";
 
           const entry_cert_id = document.getElementById("entry_cert_id");
           entry_cert_id.textContent = result.certificate_id;
