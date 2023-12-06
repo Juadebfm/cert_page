@@ -10,13 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the content containers for different course levels
   const entryLevelContainer = document.querySelector(".cert-section");
   const diplomaLevelContainer = document.querySelector(".diploma-section");
+  const entryLevelImg = document.querySelector(".im-rap");
   const mainBody = document.getElementById("mainBody");
-
-  const download_cert = document.getElementById("download_cert");
-  const download_dip = document.getElementById("download_dip");
-
-  // download_cert.style.display = "none";
-  download_dip.style.display = "none";
 
   if (certificateId) {
     // Certificate ID is found in the URL
@@ -77,20 +72,17 @@ document.addEventListener("DOMContentLoaded", function () {
           const dipDay = document.getElementById("dip_day");
           const dipCertId = document.getElementById("dip_cert_id");
 
-          download_dip.style.display = "block";
-
           dipFullName.textContent = result.full_name;
           dipCourseName.textContent = result.course_name;
           dipDay.textContent = result.date_issued;
           dipCertId.textContent = result.certificate_id;
           // Show the diploma level container and hide the entry level container
           entryLevelContainer.style.display = "none";
+          entryLevelImg.style.display = "none";
           diplomaLevelContainer.style.display = "block";
-        } else if (courseLevel === "Entrylevel") {
-          // download_cert.style.display = "block";
-
-          const entry_cert_id = document.getElementById("entry_cert_id");
-          entry_cert_id.textContent = result.certificate_id;
+        } else if (courseLevel.toLowerCase() === "entrylevel") {
+          // const entry_cert_id = document.getElementById("entry_cert_id");
+          // entry_cert_id.textContent = result.certificate_id;
           const cert_student_name =
             document.getElementById("cert_student_name");
           cert_student_name.textContent = result.full_name;
